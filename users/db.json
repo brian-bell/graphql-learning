@@ -2,9 +2,9 @@
   "users": [
     {
       "id": "23",
-      "firstName": "Alice",
-      "age": 41,
-      "companyId": "1"
+      "firstName": "Brian",
+      "age": 38,
+      "companyId": "3"
     },
     {
       "id": "40",
@@ -29,6 +29,11 @@
       "id": "2",
       "name": "Google",
       "description": "Search"
+    },
+    {
+      "id": "3",
+      "name": "DICK'S Sporting Goods",
+      "description": "Innovation"
     }
   ]
 }
