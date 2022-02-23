@@ -6,7 +6,8 @@ import mutation from '../mutations/deleteSong';
 
 class SongList extends Component {
   onSongDelete(id) {
-    this.props.mutate({ variables: { id } });
+    this.props.mutate({ variables: { id } })
+      .then(() => this.props.data.refetch());
   }
 
   renderSongs() {
@@ -14,7 +15,9 @@ class SongList extends Component {
       return (
         <li key={id} className="collection-item">
           {title}
-          <i className="material-icons" onClick={() => this.onSongDelete(id)}>
+          <i
+            className="material-icons"
+            onClick={() => this.onSongDelete(id)}>
             delete
           </i>
         </li>
