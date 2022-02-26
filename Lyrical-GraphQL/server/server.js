@@ -8,9 +8,9 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = 'mongodb+srv://dsgpnadsgiunisgd:lxOjsqAhgfpAhLlj@cluster0.m2v6f.mongodb.net/lyricaldb?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb://mongo:mongo@localhost/admin?retryWrites=true&w=majority';
 if (!MONGO_URI) {
-  throw new Error('You must provide a MongoLab URI');
+  throw new Error('You must provide a Mongo URI');
 }
 
 mongoose.Promise = global.Promise;
@@ -20,8 +20,8 @@ mongoose.connect(MONGO_URI,
     useUnifiedTopology: true
   });
 mongoose.connection
-  .once('open', () => console.log('Connected to MongoLab instance.'))
-  .on('error', error => console.log('Error connecting to MongoLab:', error));
+  .once('open', () => console.log('Connected to Mongo instance.'))
+  .on('error', error => console.log('Error connecting to Mongo:', error));
 
 app.use(bodyParser.json());
 app.use('/graphql', expressGraphQL({
